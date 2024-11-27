@@ -1,0 +1,42 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>
+    <m:VBox
+        class="sapUiSmallMargin"
+        width="100%"
+    >
+        <m:List
+            growing="true"
+            growingThreshold="5"
+            items="{path: 'Orders'}"
+        >
+            <m:CustomListItem>
+                <m:HBox
+                    justifyContent="SpaceBetween"
+                    alignItems="Center"
+                    class="sapUiSmallMarginBottom"
+                >
+                    <layout:VerticalLayout class="sapUiSmallMarginEnd">
+                        <m:Label text="{i18n>OrderID}" class="sapUiTinyMarginBottom" design="Bold"/>
+                        <m:Text text="{OrderID}" />
+                    </layout:VerticalLayout>
+                    
+                    <layout:VerticalLayout class="sapUiSmallMarginEnd">
+                        <m:Label text="{i18n>CustomerID}" class="sapUiTinyMarginBottom" design="Bold"/>
+                        <m:Text text="{CustomerID}" />
+                    </layout:VerticalLayout>
+                    
+                    <layout:VerticalLayout class="sapUiTinyMarginEnd">
+                        <m:Label text="{i18n>OrderDate}" class="sapUiTinyMarginBottom" design="Bold"/>
+                        <m:Text text="{path: 'OrderDate', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date'}}" />
+                    </layout:VerticalLayout>
+                </m:HBox>
+            </m:CustomListItem>
+        </m:List>
+    </m:VBox>
+</mvc:View>

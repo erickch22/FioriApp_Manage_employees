@@ -1,0 +1,29 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:forms="sap.ui.layout.form"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+>
+    <forms:SimpleForm
+        editable="false"
+        layout="ResponsiveGridLayout"
+        columnsXL="0"
+        columnsL="0"     
+        columnsM="0"
+    >
+        <Label text="{i18n>Address}" />
+        <Text text="{Address}" />
+
+        <Label text="{i18n>City}" />
+        <Text text="{City}" />
+
+        <Label text="{i18n>PostalCode}" />
+        <Text text="{PostalCode}" />
+
+        <Label text="{i18n>Country}" />
+        <Text text="{Country}" />
+    </forms:SimpleForm>
+
+</mvc:View>

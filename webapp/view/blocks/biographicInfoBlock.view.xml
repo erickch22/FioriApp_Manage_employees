@@ -1,0 +1,32 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:forms="sap.ui.layout.form"
+    xmlns:m="sap.m"
+>
+    <forms:SimpleForm
+        editable="false"
+        layout="ColumnLayout"
+    >
+        <m:Label text="{i18n>BirthDate}" />
+        <Text
+            text="{path: 'BirthDate', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date'}}"
+        />
+
+        <m:Label text="{i18n>birthplace}" />
+        <m:Text text="{Country}" />
+
+        <m:Label text="{i18n>birthday}" />
+        <Text
+            text="{path: 'BirthDate', type: 'sap.ui.model.odata.type.DateTime', constraints: {
+        displayFormat: 'Date'
+    },
+    formatOptions: {
+        pattern: 'dd-MM'   
+    }}"
+        />
+    </forms:SimpleForm>
+</mvc:View>

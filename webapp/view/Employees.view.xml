@@ -1,0 +1,59 @@
+<mvc:View
+    controllerName="manageemployees.controller.Employees"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <f:DynamicPage headerExpanded="{/headerExpanded}">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title
+                        text="{i18n>titleEmployees}"
+                        class="sapThemeBrand-asColor"
+                    />
+                </f:heading>
+                <f:snappedContent>
+                    <Label text="No filters active" />
+                </f:snappedContent>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar
+                        persistencyKey="myPersKey"
+                        useToolbar="false"
+                    >
+                        <fb:filterGroupItems>
+                            <fb:FilterGroupItem
+                                name="Name"
+                                label="Name"
+                                groupName="Group1"
+                                visibleInFilterBar="true"
+                            >
+                                <fb:control>
+                                    <SearchField liveChange="onSearchFieldLiveChange" />
+                                </fb:control>
+                            </fb:FilterGroupItem>
+                        </fb:filterGroupItems>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Panel>
+                <List items="{/Employees}" id="idEmployeesList">
+                    <items>
+                        <ObjectListItem
+                            title="{FirstName} {LastName}"
+                            type="Navigation"
+                            press="onNavDetail"
+                        />
+                    </items>
+                </List>
+            </Panel>
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>

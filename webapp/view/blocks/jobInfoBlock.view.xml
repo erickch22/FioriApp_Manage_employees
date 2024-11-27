@@ -1,0 +1,37 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:forms="sap.ui.layout.form"
+    xmlns:m="sap.m"
+>
+    <forms:SimpleForm
+        editable="false"
+        layout="ColumnLayout"
+    >
+        <m:Label text="{i18n>HireDate}" />
+        <m:Text
+            text="{path: 'HireDate', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date'}}"
+        />
+        <m:Label text="{i18n>jobPosition}" />
+        <m:Text text="{Title}" />
+
+        <m:Label text="{i18n>Region}" />
+        <m:Text text="{Region}" />
+
+        <m:Label text="{i18n>Extension}" />
+        <m:Text text="{Extension}" />
+
+        <m:Label
+            text="{i18n>ReportsTo}"
+            visible="{= ${ReportsTo} !== null &amp;&amp; ${ReportsTo} !== '' }"
+
+        />
+        <m:Text
+            text="{ReportsTo}"
+            visible="{= ${ReportsTo} !== null &amp;&amp; ${ReportsTo} !== '' }"
+
+        />
+    </forms:SimpleForm>
+</mvc:View>

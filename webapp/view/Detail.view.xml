@@ -1,0 +1,166 @@
+<mvc:View
+    controllerName="manageemployees.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    height="100%"
+    xmlns:uxap="sap.uxap"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:blocks="manageemployees.controller.blocks"
+>
+    <uxap:ObjectPageLayout
+        subSectionLayout="TitleOnLeft"
+        showTitleInHeaderContent="true"
+    >
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:breadcrumbs>
+                    <m:Breadcrumbs currentLocationText="Detail Employee">
+                        <m:Link
+                            text="List Employees"
+                            press="handleLink1Press"
+                        />
+                    </m:Breadcrumbs>
+                </uxap:breadcrumbs>
+
+                <uxap:expandedHeading>
+                    <m:HBox class="sapUiSmallMarginTop">
+                        <m:Title
+                            text="{FirstName} {LastName}"
+                            wrapping="true"
+                            class="sapUiSmallMarginBegin"
+                        />
+                    </m:HBox>
+                </uxap:expandedHeading>
+
+                <uxap:snappedHeading>
+                    <m:FlexBox
+                        fitContainer="true"
+                        class="sapUiSmallMarginTop"
+                        alignItems="Center"
+                    >
+                        <m:Avatar
+                            class="sapUiTinyMarginEnd"
+                            src="PhotoPath"
+                        />
+                        <m:Title
+                            text="{FirstName} {LastName}"
+                            wrapping="true"
+                            class="sapUiSmallMarginBegin"
+                        />
+                    </m:FlexBox>
+                </uxap:snappedHeading>
+                <uxap:actions>
+                    <m:OverflowToolbarButton
+                        icon="sap-icon://edit"
+                        text="edit header"
+                        type="Emphasized"
+                        tooltip="edit"
+                    >
+                        <m:layoutData>
+                            <m:OverflowToolbarLayoutData
+                                priority="NeverOverflow"
+                            />
+                        </m:layoutData>
+                    </m:OverflowToolbarButton>
+                    <m:OverflowToolbarButton
+                        icon="sap-icon://pull-down"
+                        text="show section"
+                        type="Emphasized"
+                        tooltip="pull-down"
+                    />
+                    <m:OverflowToolbarButton
+                        icon="sap-icon://show"
+                        text="show state"
+                        tooltip="show"
+                    />
+                    <m:Button
+                        text="Toggle Footer"
+                    />
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <m:FlexBox wrap="Wrap">
+                <m:Avatar
+                    class="sapUiSmallMarginEnd"
+                    src="PhotoPath"
+                    displaySize="L"
+                />
+
+                <layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+                    <m:Text text="{i18n>idEmployee}: {EmployeeID}" />
+                    <m:Text text="{i18n>phoneEmployee}: {HomePhone}" />
+                </layout:VerticalLayout>
+            </m:FlexBox>
+        </uxap:headerContent>
+
+        <uxap:sections>
+            <uxap:ObjectPageSection
+                title="{i18n>userDataSection}"
+                class="sapUiTinyMargin"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="{i18n>userDataSection}">
+                        <uxap:blocks>
+                            <blocks:userInfoBlock />
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection
+                title="{i18n>PersonalSection}"
+                class="sapUiTinyMargin"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection
+                        title="{i18n>bigraphicInfo}"
+                        class="sapUiSmallMarginTop"
+                    >
+                        <uxap:blocks>
+                            <blocks:biographicInfoBlock />
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+
+                    <uxap:ObjectPageSubSection title="Address information">
+                        <blocks:addressInfoBlock />
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection
+                title="{i18n>JobInfo}"
+                class="sapUiTinyMargin"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection
+                        title="{i18n>companyInfo}"
+                        class="sapUiSmallMarginTop"
+                    >
+                        <uxap:blocks>
+                            <blocks:jobInfoBlock />
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection
+                title="{i18n>Orders}"
+                class="sapUiTinyMargin"
+            >
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection
+                        title="{i18n>Orders}"
+                        class="sapUiSmallMarginTop"
+                    >
+                        <uxap:blocks>
+                            <blocks:ordersBlock/>
+                        </uxap:blocks>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+</mvc:View>

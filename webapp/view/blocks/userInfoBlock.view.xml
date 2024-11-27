@@ -1,0 +1,20 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:forms="sap.ui.layout.form"
+    xmlns:m="sap.m"
+>
+    <forms:SimpleForm
+        editable="false"
+        layout="ColumnLayout"
+    >
+        <m:Label text="{i18n>Notes}" />
+        <m:Text text="{Notes}" />
+
+        <m:Label text="{i18n>jobPosition}" />
+        <m:Text text="{Title}" />
+    </forms:SimpleForm>
+</mvc:View>
